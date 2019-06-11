@@ -1,0 +1,32 @@
+.list-view{
+ -fx-background-color:white;
+}
+
+
+.button{
+     -fx-background-insets: 0px;
+     -fx-background-color:#212121;
+     -fx-text-fill:white;
+}
+
+.list-view .list-cell:even {
+-fx-text-fill: #004D40;
+}
+.list-view .list-cell:odd {
+-fx-text-fill: #004D40;
+}
+.list-view .list-cell:focused {
+-fx-background-color: #BF360C;
+-fx-text-fill: white;
+}
+/*.list-view .list-cell:hover {
+-fx-background-color:#FF3D00;
+-fx-text-fill: white;
+-fx-cursor:hand;
+}*/
+.text-flow{
+    -fx-background-radius:20;
+    -fx-background-color:white;
+    -fx-font-size:16;
+    -fx-font-family: Nokora;
+}

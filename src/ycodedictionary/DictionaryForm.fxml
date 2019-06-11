@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane prefHeight="630.0" prefWidth="900.0" stylesheets="@dic_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ycodedictionary.DictionaryFormController">
+   <left>
+      <AnchorPane prefHeight="325.0" prefWidth="267.0" style="-fx-background-color: #0288D1;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtSearch" alignment="TOP_LEFT" layoutX="10.0" layoutY="19.0" onKeyReleased="#txtSearchClick" prefHeight="31.0" prefWidth="248.0" promptText="ស្វែងរក" style="-fx-background-radius: 20 20 20 20;">
+               <font>
+                  <Font name="Kh System" size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </TextField>
+            <ListView fx:id="listView" layoutY="69.0" onMouseClicked="#listClick" prefHeight="325.0" prefWidth="304.0" style="-fx-border-color: white; -fx-font-size: 15; -fx-font-family: Nokora;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.0">
+               <padding>
+                  <Insets left="-1.0" />
+               </padding>
+            </ListView>
+            <ImageView fitHeight="22.0" fitWidth="32.0" layoutX="225.0" layoutY="24.0" onMouseClicked="#clearClick" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@backspace.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0" style="-fx-background-color: #546E7A;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="kk" mnemonicParsing="false" onMouseClicked="#kkClick" style="-fx-background-radius: 20 0 0 20;" text="ខ្មែរ-ខ្មែរ">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="ke" mnemonicParsing="false" onMouseClicked="#keClick" text="ខ្មែរ-អង់គ្លេស">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="ek" mnemonicParsing="false" onMouseClicked="#ekClick" text="អង់គ្លេស-ខ្មែរ">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="ee" layoutX="356.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#eeClick" text="អង់គ្លេស-អង់គ្លេស">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="pv" layoutX="390.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#pvClick" text="ឃ្លាកិរិយាស័ព្ទ">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="pc" layoutX="460.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#pcClick" text="កុំព្យូទ័រ">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="ac" layoutX="652.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#acClick" style="-fx-background-radius: 0 20 20 0;" text="គណនី">
+               <font>
+                  <Font name="NiDA Bayon" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#4d4d4d" height="30.0" radius="14.5" width="30.0" />
+         </effect>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="291.0" prefWidth="242.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="60.0" right="60.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox fx:id="title1" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100; -fx-background-color: #4A148C;">
+               <VBox.margin>
+                  <Insets bottom="-50.0" />
+               </VBox.margin>
+               <children>
+                  <Label fx:id="lbl1" text="គ្មានទិន្នន័យ" textFill="WHITE">
+                     <font>
+                        <Font name="Nokora Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow color="#434242" />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <TextFlow fx:id="textDifinition" prefHeight="259.0" prefWidth="513.0" styleClass="text-flow">
+               <padding>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" color="#c5c5c5" />
+               </effect>
+            </TextFlow>
+            <VBox alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100; -fx-background-color: #BF360C;">
+               <children>
+                  <Label text="អំពីកម្មវិធី" textFill="WHITE">
+                     <font>
+                        <Font name="Nokora Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow color="#434242" />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="-50.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="139.0" prefWidth="513.0" styleClass="text-flow">
+               <children>
+                  <Label text="- កម្មវិធីនេះបង្កើតឡើងដោយលោក ស៊្រុន វណ្ណារ៉ា" />
+                  <Label text="- ចាប់ផ្ដើមបង្កើតថ្ងៃទី០៩ ខែមិថុនា ឆ្នាំ២០១៩ " />
+                  <Label text="- បង្កើតឡើងដោយប្រើភាសា Java" />
+                  <Label text="- បញ្ចប់នៅថ្ងៃទី....... ខែ....... ឆ្នាំ២០១៩ " />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" color="#c5c5c5" />
+               </effect>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
