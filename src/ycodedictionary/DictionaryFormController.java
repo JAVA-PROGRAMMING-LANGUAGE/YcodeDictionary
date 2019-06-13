@@ -22,6 +22,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import ycodedictionary.animate.Shake;
+import ycodedictionary.data.AcDict;
+import ycodedictionary.data.ElDict;
+import ycodedictionary.data.LanDict;
+import ycodedictionary.data.MathDict;
+import ycodedictionary.data.PcDict;
+import ycodedictionary.data.StDict;
 
 /**
  * FXML Controller class
@@ -33,22 +40,8 @@ public class DictionaryFormController implements Initializable {
     @FXML
     private ListView<String> listView;
     @FXML
-    private Button kk;
-    @FXML
-    private Button ke;
-    @FXML
-    private Button ek;
-    @FXML
-    private Button ee;
-    @FXML
-    private Button pv;
-    @FXML
-    private Button pc;
-    @FXML
     private TextField txtSearch;
-
     ObservableList list = FXCollections.observableArrayList();
-
     TreeMap<String, String> data;
     @FXML
     private TextFlow textDifinition;
@@ -58,6 +51,18 @@ public class DictionaryFormController implements Initializable {
     private VBox title1;
     @FXML
     private Button ac;
+    @FXML
+    private VBox title2;
+    @FXML
+    private Button math;
+    @FXML
+    private Button st;
+    @FXML
+    private Button el;
+    @FXML
+    private Button lan;
+    @FXML
+    private Button pc;
 
     /**
      * Initializes the controller class.
@@ -65,112 +70,56 @@ public class DictionaryFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setBtnDictStyle();
-        kk.setStyle("-fx-background-color:#AA00FF;-fx-background-radius:  20 0 0 20;");
+        lan.setStyle("-fx-background-color:orange;-fx-background-radius:  20 0 0 20;");
         title1.setStyle("-fx-background-color:#AA00FF ;-fx-background-radius: 100");
-
-        data = new KkDict().setData();
-        txtSearch.setPromptText("ពាក្យមាន " + data.size());
+        data = new LanDict().setData();
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
         textDifinition.getChildren().clear();
-        //data loaded in initAllData()
         for (Map.Entry m : data.entrySet()) {
             list.add(m.getKey());
         }
         listView.setItems(list);
-    }
-
-    @FXML
-    private void kkClick(MouseEvent event) {
-        setBtnDictStyle();
-        reset();
-        kk.setStyle("-fx-background-color:#AA00FF;-fx-background-radius:  20 0 0 20;");
-        title1.setStyle("-fx-background-color:#AA00FF ;-fx-background-radius: 100");
-        list.clear();
-        data.clear();
-        data = new KkDict().setData();
-        for (Map.Entry m : data.entrySet()) {
-            list.add(m.getKey());
-        }
-        listView.setItems(list);
-        txtSearch.setPromptText("ពាក្យមាន " + data.size());
-    }
-
-    @FXML
-    private void keClick(MouseEvent event) {
-        reset();
-        setBtnDictStyle();
-        ke.setStyle("-fx-background-color:orange;-fx-background-radius: 0;");
-        title1.setStyle("-fx-background-color:orange ;-fx-background-radius: 100");
-        list.clear();
-        data.clear();
-        data = new KeDict().setKeData();
-        for (Map.Entry m : data.entrySet()) {
-            list.add(m.getKey());
-        }
-        listView.setItems(list);
-        txtSearch.setPromptText("ពាក្យមាន " + data.size());
-    }
-
-    @FXML
-    private void ekClick(MouseEvent event) {
-        setBtnDictStyle();
-        ek.setStyle("-fx-background-color:#00796B;-fx-background-radius: 0;");
-        title1.setStyle("-fx-background-color:#00796B ;-fx-background-radius: 100");
-
-    }
-
-    @FXML
-    private void eeClick(MouseEvent event) {
-        setBtnDictStyle();
-        ee.setStyle("-fx-background-color:#FF1744;-fx-background-radius: 0;");
-        title1.setStyle("-fx-background-color:#FF1744 ;-fx-background-radius: 100");
-    }
-
-    @FXML
-    private void pvClick(MouseEvent event) {
-        setBtnDictStyle();
-        pv.setStyle("-fx-background-color:#01579B;-fx-background-radius:  0;");
-        title1.setStyle("-fx-background-color:#01579B ;-fx-background-radius: 100");
     }
 
     @FXML
     private void pcClick(MouseEvent event) {
+        list.clear();
+        data.clear();
         reset();
         setBtnDictStyle();
         pc.setStyle("-fx-background-color:#880E4F;-fx-background-radius:  0");
         title1.setStyle("-fx-background-color:#880E4F ;-fx-background-radius: 100");
-        list.clear();
-        data.clear();
         data = new PcDict().setData();
         for (Map.Entry m : data.entrySet()) {
             list.add(m.getKey());
         }
         listView.setItems(list);
-        txtSearch.setPromptText("ពាក្យមាន " + data.size());
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
+        new Shake(title1).play();
     }
 
     @FXML
     private void acClick(MouseEvent event) {
-        reset();
-        setBtnDictStyle();
-        ac.setStyle("-fx-background-color:#581845;-fx-background-radius:  0");
-        ac.setStyle("-fx-background-color:#581845 ;-fx-background-radius: 0 20 20 0");
-        title1.setStyle("-fx-background-color:#581845 ;-fx-background-radius: 100");
         list.clear();
         data.clear();
+        reset();
+        setBtnDictStyle();
+        ac.setStyle("-fx-background-color:blue;-fx-background-radius: 0 20 20 0");
+        title1.setStyle("-fx-background-color:blue;-fx-background-radius: 100");
         data = new AcDict().setData();
         for (Map.Entry m : data.entrySet()) {
             list.add(m.getKey());
         }
         listView.setItems(list);
-        txtSearch.setPromptText("ពាក្យមាន " + data.size());
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
+        new Shake(title1).play();
     }
 
     private void setBtnDictStyle() {
-        kk.setStyle("-fx-background-radius:  20 0 0 20;");
-        ke.setStyle(" -fx-background-radius: 0;");
-        ek.setStyle("-fx-background-radius: 0;");
-        ee.setStyle("-fx-background-radius: 0;");
-        pv.setStyle("-fx-background-radius:  0;");
+        lan.setStyle("-fx-background-radius:  20 0 0 20;");
+        el.setStyle("-fx-background-radius: 0;");
+        math.setStyle("-fx-background-radius: 0;");
+        st.setStyle("-fx-background-radius:  0;");
         pc.setStyle("-fx-background-radius:  0;");
         ac.setStyle("-fx-background-radius:  0 20 20 0;");
     }
@@ -179,7 +128,6 @@ public class DictionaryFormController implements Initializable {
     private void txtSearchClick(KeyEvent event) {
         String text = txtSearch.getText().trim().toLowerCase();
         if (!txtSearch.getText().trim().isEmpty()) {
-
             for (int i = 0; i < list.size(); i++) {
                 String val = list.get(i) + "";
                 val = val.toLowerCase();
@@ -189,14 +137,16 @@ public class DictionaryFormController implements Initializable {
                     showDifinition();
                     return;
                 }
-                lbl1.setText("គ្មានទិន្នន័យ");
+
                 textDifinition.getChildren().clear();
                 listView.getSelectionModel().clearSelection();
                 listView.scrollTo(0);
+
             }
         } else {
             reset();
         }
+        new Shake(title1).play();
     }
 
     @FXML
@@ -204,12 +154,14 @@ public class DictionaryFormController implements Initializable {
         if (listView.getSelectionModel().getSelectedIndex() >= 0) {
             txtSearch.setText(listView.getSelectionModel().getSelectedItem());
             showDifinition();
+            new Shake(title1).play();
         }
     }
 
     private void showDifinition() {
         textDifinition.getChildren().setAll(new Text(listView.getSelectionModel().getSelectedItem() + data.get(listView.getSelectionModel().getSelectedItem())));
-        lbl1.setText("ន័យនៃពាក្យ");
+        new Shake(title1).play();
+
     }
 
     @FXML
@@ -221,8 +173,89 @@ public class DictionaryFormController implements Initializable {
         listView.scrollTo(0);
         listView.getSelectionModel().clearSelection();
         txtSearch.setText("");
-        lbl1.setText("គ្មានទិន្នន័យ");
         textDifinition.getChildren().clear();
+        new Shake(title1).play();
+    }
+
+    @FXML
+    private void mouseEnterAbout(MouseEvent event) {
+        new Shake(title2).play();
+    }
+
+    @FXML
+    private void mathClick(MouseEvent event) {
+        list.clear();
+        data.clear();
+        reset();
+        setBtnDictStyle();
+        math.setStyle("-fx-background-color:#FF1744;-fx-background-radius: 0;");
+        title1.setStyle("-fx-background-color:#FF1744 ;-fx-background-radius: 100");
+        new Shake(title1).play();
+        data = new MathDict().setData();
+        for (Map.Entry m : data.entrySet()) {
+            list.add(m.getKey());
+        }
+        listView.setItems(list);
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
+        new Shake(title1).play();
+    }
+
+    @FXML
+    private void stClick(MouseEvent event) {
+        list.clear();
+        data.clear();
+        reset();
+        setBtnDictStyle();
+        st.setStyle("-fx-background-color:#01579B;-fx-background-radius:  0;");
+        title1.setStyle("-fx-background-color:#01579B ;-fx-background-radius: 100");
+        new Shake(title1).play();
+        data = new StDict().setData();
+        for (Map.Entry m : data.entrySet()) {
+            list.add(m.getKey());
+        }
+        listView.setItems(list);
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
+        new Shake(title1).play();
+    }
+
+    @FXML
+    private void elClick(MouseEvent event) {
+        list.clear();
+        data.clear();
+        reset();
+        setBtnDictStyle();
+        el.setStyle("-fx-background-color:#00796B;-fx-background-radius: 0;");
+        title1.setStyle("-fx-background-color:#00796B ;-fx-background-radius: 100");
+        new Shake(title1).play();
+        data = new ElDict().setData();
+        for (Map.Entry m : data.entrySet()) {
+            list.add(m.getKey());
+        }
+        listView.setItems(list);
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
+        new Shake(title1).play();
+    }
+
+    @FXML
+    private void LanClick(MouseEvent event) {
+        list.clear();
+        data.clear();
+        reset();
+        setBtnDictStyle();
+        lan.setStyle("-fx-background-color:orange;-fx-background-radius: 20 0 0 20;");
+        title1.setStyle("-fx-background-color:orange ;-fx-background-radius: 100");
+        data = new LanDict().setData();
+        for (Map.Entry m : data.entrySet()) {
+            list.add(m.getKey());
+        }
+        listView.setItems(list);
+        txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
+        new Shake(title1).play();
+    }
+
+    @FXML
+    private void listClickArrow(KeyEvent event) {
+        event.consume();
     }
 
 }

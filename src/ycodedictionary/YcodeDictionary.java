@@ -24,7 +24,8 @@ public class YcodeDictionary extends Application {
         //primaryStage.setTitle("YCODE DICTIONARY");
         BorderPane borderPane = FXMLLoader.load(getClass().getResource("DictionaryForm.fxml"));
         Scene scene = new Scene(borderPane, 900, 630);
-        primaryStage.setScene(scene);;
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

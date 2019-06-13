@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ycodedictionary;
+package ycodedictionary.data;
 
 import java.util.TreeMap;
 
 /**
  *
- * @author YCODE
+ * Account dictionary
  */
 public class AcDict {
 

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ycodedictionary;
+package ycodedictionary.data;
 
 import java.util.TreeMap;
 
 /**
  *
- * @author YCODE
+ * Computer dictionary
  */
 public class PcDict {
 
@@ -799,7 +799,7 @@ public class PcDict {
         treeMap.put("Favorite Folder", " (n):  ថត​សំណព្វ ");
         treeMap.put("Favorite", " (n):  សំណព្វ ");
         treeMap.put("Feature", " (n):  លក្ខណៈ ");
-        treeMap.put("Feed (Newsfeed)", " (n):  មតិ​ព័ត៌មាន  ");
+        treeMap.put("Feed (Newsfeed)", " (n):  មតិ​ព័ត៌មានចំនួន");
         treeMap.put("Feedback", " (n):  មតិអ្នកប្រើ ");
         treeMap.put("Feet", " (n):  ហ៊្វីតថ៍ ");
         treeMap.put("Fetch", " (tv):  ទៅ​ប្រមូល​យក ");
