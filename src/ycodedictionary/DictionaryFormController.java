@@ -79,13 +79,13 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        listView.scrollTo(0);
     }
 
     @FXML
     private void pcClick(MouseEvent event) {
         list.clear();
         data.clear();
-        reset();
         setBtnDictStyle();
         pc.setStyle("-fx-background-color:#880E4F;-fx-background-radius:  0");
         title1.setStyle("-fx-background-color:#880E4F ;-fx-background-radius: 100");
@@ -94,15 +94,14 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        reset();
         txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
-        new Shake(title1).play();
     }
 
     @FXML
     private void acClick(MouseEvent event) {
         list.clear();
         data.clear();
-        reset();
         setBtnDictStyle();
         ac.setStyle("-fx-background-color:blue;-fx-background-radius: 0 20 20 0");
         title1.setStyle("-fx-background-color:blue;-fx-background-radius: 100");
@@ -111,8 +110,8 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        reset();
         txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
-        new Shake(title1).play();
     }
 
     private void setBtnDictStyle() {
@@ -196,8 +195,8 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        reset();
         txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
-        new Shake(title1).play();
     }
 
     @FXML
@@ -214,8 +213,8 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        reset();
         txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
-        new Shake(title1).play();
     }
 
     @FXML
@@ -232,8 +231,8 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        reset();
         txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
-        new Shake(title1).play();
     }
 
     @FXML
@@ -249,8 +248,8 @@ public class DictionaryFormController implements Initializable {
             list.add(m.getKey());
         }
         listView.setItems(list);
+        reset();
         txtSearch.setPromptText("មានចំនួន" + data.size() + "ពាក្យ");
-        new Shake(title1).play();
     }
 
     @FXML

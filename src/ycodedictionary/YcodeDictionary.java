@@ -9,6 +9,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -21,11 +22,13 @@ public class YcodeDictionary extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        //primaryStage.setTitle("YCODE DICTIONARY");
+        primaryStage.setTitle("YCODE DICTIONARY");
         BorderPane borderPane = FXMLLoader.load(getClass().getResource("DictionaryForm.fxml"));
         Scene scene = new Scene(borderPane, 900, 630);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
+        Image img = new Image("ycodedictionary/resource/ycode-logo.png");
+        primaryStage.getIcons().add(img);
         primaryStage.show();
     }
 
